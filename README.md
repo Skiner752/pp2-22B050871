@@ -1,1 +1,1 @@
-Kuanyshbek Ruslan 
+Kuanyshbek Ruslan sus
