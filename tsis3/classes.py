@@ -1,56 +1,60 @@
-# class Stringoperations:
-#    def getString(self):
-#       self.s = input()
+class Stringoperations:
+   def getString(self):
+      self.s = input()
 
-#    def printString(self):
-#       return self.s.upper()
+   def printString(self):
+      print(self.s.upper())
 
 # strr = Stringoperations()
 # strr.getString()
-# result = strr.printString()
-# print(result)
+# strr.printString()
 
-# class Shape:
-#     def __init__(self):
-#         self.area = 0
 
-#     def area(self):
-#         return self.area
+class Shape:
+    def __init__(self):
+        self.area = 0
 
-# class Square(Shape): # subclass
-#     def __init__(self, length):
-#         self.length = length
+    def area(self):
+        return self.area
 
-#     def area(self):
-#         return self.length * self.length
+class Square(Shape): # subclass
+    def __init__(self, length):
+        self.length = length
+
+    def area(self):
+        return self.length * self.length
 
 # sq = Square(int(input()))
 # print(sq.area())
 
-# class Rectangle(Shape):
-#    def __init__(self, width , length):
-#       self.length = length
-#       self.width = width
+class Rectangle(Shape):
+   def __init__(self, width , length):
+      self.length = length
+      self.width = width
    
-#    def Area(self):
-#       return self.length * self.width 
+   def Area(self):
+      print(self.length * self.width) 
 
 # rec = Rectangle(int(input()) , int(input()))
-# print(rec.Area())
-# class Point:
-#     def __init__(self, x, y):
-#         self.x = x
-#         self.y = y
+# rec.Area()
 
-#     def show(self):
-#         print(f"({self.x}, {self.y})")
 
-#     def move(self, x, y):
-#         self.x += 2
-#         self.y += 3
 
-#     def dist(self, another):
-#         return ((self.x - another.x)**2 + (self.y - another.y)**2)**0.5
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def show(self):
+        print(f"({self.x}, {self.y})")
+
+    def move(self, movedX, movedY):
+        self.x = movedX
+        self.y = movedY
+
+    def dist(self, another):
+        return ((self.x - another.x)**2 + (self.y - another.y)**2)**0.5
 
 # p1 = Point(int(input()), int(input()))
 # p2 = Point(int(input()), int(input()))
@@ -63,27 +67,31 @@
 
 
 
-# class Bank_Account:
-#    def __init__(self , owner , balance):
-#       self.owner = owner
-#       self.balance = balance
+class Bank_Account:
+   def __init__(self , owner , balance):
+      self.owner = owner
+      self.balance = balance
    
-#    def deposit(self, dep_money):
-#       self.balance += dep_money
-#       print("After transaction: ",self.balance)
+   def deposit(self, dep_money):
+      self.balance += dep_money
+      print("After transaction: ",self.balance)
    
-#    def withdraw(self, with_money):
-#       if with_money > self.balance:
-#          print("oppss")
-#       else:
-#          self.balance -= with_money
-#          print("After another transaction: ",self.balance)
+   def withdraw(self, with_money):
+      if with_money > self.balance:
+         print("oppss")
+      else:
+         self.balance -= with_money
+         print("After another transaction: ",self.balance)
    
 # acc = Bank_Account("RK" , 100)
 # acc.deposit(int(input()))
 # acc.withdraw(int(input()))
-# def filter_prime(numbers):
-#     return filter(lambda x: all(x % i != 0 for i in range(2, x)), numbers) # filter(function , iterable)
+
+
+
+
+def filter_prime(numbers):
+    return filter(lambda x: all(x % i != 0 for i in range(2, x)), numbers) 
 
 # numbers = list(map(int , input().split()))
 # prime_numbers = list(filter_prime(numbers))

@@ -1,5 +1,5 @@
-def score(movies):
-    if movies["imdb"] > 5.5:
+def score(movie):
+    if movie["imdb"] > 5.5:
         return True
     else:
         return False
@@ -10,8 +10,8 @@ def sublist(all_movies):
         
 
 
-def category_name(all_movies, category):
-    return [categ for categ in all_movies if categ["category"] == category]
+def category_name(category):
+    return [categ for categ in movies if categ["category"] == category]
 
 
 
@@ -19,20 +19,21 @@ def average(all_movies):
     amount_of_movies = len(all_movies)
     a = 0
     for movie in all_movies:
-        a += movie["imdb"] 
+        a += int(movie["imdb"]) 
     return a/amount_of_movies
 
 
-def category_average(all_movies , category):
-    amount_of_movies_category = len([movie for movie in all_movies if movie["category"] == category])
+def category_average(category):
+    amount_of_movies_category = len([movie for movie in movies if movie["category"] == category])
     b = 0
-    for movie in all_movies:
+    for movie in movies:
         if movie["category"] == category:
             b += movie["imdb"]
 
-    return b/amount_of_movies_category
+    return (b/amount_of_movies_category)
 
 
+global movies
 
 movies = [
 {
@@ -112,15 +113,16 @@ movies = [
 }
 ]
 
-# for movie in movies:
-#     print(score(movie))
+
+# print(score(movies[5]))
 
 
 # print(sublist(movies))
 
 
-# print(category_name(movies , 'Romance'))
+# print(category_name('Romance'))
 
 # print(average(movies))
 
-# print(category_average(movies , 'Romance'))
+# a = category_average('Romance')
+# print('The average Romance score is {:,.4f}'.format(a) )
