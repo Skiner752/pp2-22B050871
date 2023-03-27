@@ -43,7 +43,7 @@ while not done:
     current_date_time = datetime.datetime.now()
     minute = current_date_time.minute
     second = current_date_time.second
-    
+    minute = minute + 1.4
     
     screen.fill(WHITE)
     screen.blit(clock_img , (53,40))
@@ -56,7 +56,7 @@ while not done:
     
     #Second
     theta = second * (360/60)
-    rotation(screen , second_hand , center , (second_hand.get_width() / 2 - 150 , second_hand.get_height() / 2 ) , theta - 87 ) # theta - value = промах ее
+    rotation(screen , second_hand , center , (second_hand.get_width() / 2 - 150 , second_hand.get_height() / 2 ) , theta - 88 ) # theta - value = промах ее
     
     
     
