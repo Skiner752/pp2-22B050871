@@ -178,13 +178,14 @@ def main():
     global SCORE , LEVEL
     LEVEL = 1 
     SCORE = 0
-    
-    while not done:
+    cnt = 0
+    while True:
         screen.fill(BLACK)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                done = True # exit game
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 # motion of the snake
                 if event.key == pygame.K_UP and direction != 'down':
@@ -215,7 +216,7 @@ def main():
                 Point(S.body[1].x, S.body[1].y)
             )
             F.generator(S)
-            
+            cnt +=1
         if S.check_collision(P): # If snake collect poison
             
             
